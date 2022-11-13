@@ -45,5 +45,11 @@ public class EmployeeController {
     public Employee salaryMax () {
         return this.employeeService.salaryMax();
     }
+
+    @GetMapping  ("/employees/salary/avr-high")
+    public List<Employee> salaryHigherAverage () {
+        return this.employeeService.salaryHigherAverage();
+    }
 }
+
 

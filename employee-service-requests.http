@@ -19,7 +19,7 @@ Content-Type: application/json
   "firstName": "Test2",
   "lastName": "Test2",
   "department": 2,
-  "salary": 2800
+  "salary": 8200
 }
 ### Создать сотрудника 3
 POST http://localhost:8080/employees
@@ -43,3 +43,5 @@ GET http://localhost:8080/employees/salary/min
 ### Получение сотрудника с максимальной зарплатой
 GET http://localhost:8080/employees/salary/max
 
+### Получение сотрудника с зарплатой выше средней
+GET http://localhost:8080/employees/salary/avr-high

@@ -63,12 +63,22 @@ public class EmployeeService {
 
         return highestSalary;
     }
+
     public double salaryAverage() {
 
         return employees.values().
                 stream()
                 .collect(Collectors.averagingDouble(Employee::getSalary));
 
+    }
+
+    public List<Employee> salaryHigherAverage() {
+        List<Employee> salaryHigherAverage = employees.values()
+                .stream()
+                .filter(e -> e.getSalary() > salaryAverage()).toList();
+
+
+        return salaryHigherAverage;
     }
 
 }
