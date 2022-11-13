@@ -77,7 +77,6 @@ public class EmployeeService {
                 .stream()
                 .filter(e -> e.getSalary() > salaryAverage()).toList();
 
-
         return salaryHigherAverage;
     }
 
