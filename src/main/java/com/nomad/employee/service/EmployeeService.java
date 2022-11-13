@@ -43,13 +43,6 @@ public class EmployeeService {
                 .min(Comparator.comparingInt(Employee::getSalary))
                 .get();
 
-//        List<Employee> employeesWithLowestSalary = employees.values().stream()
-//                .filter(e -> e.getSalary() == lowestSalary)
-//                .collect(Collectors.toList());
-//        Collection<Employee> salaryMin = employees.values()
-//                .stream().min(Comparator.comparing(Employee::getSalary))
-//                .stream().collect(Collectors.toList());
-//        lowestSalary.forEach(System.out::println);
 
         return lowestSalary;
     }

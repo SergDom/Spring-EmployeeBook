@@ -44,4 +44,4 @@ GET http://localhost:8080/employees/salary/min
 GET http://localhost:8080/employees/salary/max
 
 ### Получение сотрудника с зарплатой выше средней
-GET http://localhost:8080/employees/salary/avr-high
+GET http://localhost:8080/employees/high-salary
