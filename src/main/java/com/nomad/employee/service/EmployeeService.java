@@ -41,7 +41,7 @@ public class EmployeeService {
         Employee lowestSalary = employees.values().
                 stream()
                 .min(Comparator.comparingInt(Employee::getSalary))
-                .get();
+                .orElseThrow(NullPointerException::new);
 
 
         return lowestSalary;
@@ -52,7 +52,7 @@ public class EmployeeService {
         Employee highestSalary = employees.values().
                 stream()
                 .max(Comparator.comparingInt(Employee::getSalary))
-                .get();
+                .orElseThrow(NullPointerException::new);
 
         return highestSalary;
     }
@@ -66,9 +66,10 @@ public class EmployeeService {
     }
 
     public List<Employee> salaryHigherAverage() {
+        double salaryAvr = salaryAverage();
         List<Employee> salaryHigherAverage = employees.values()
                 .stream()
-                .filter(e -> e.getSalary() > salaryAverage()).toList();
+                .filter(e -> e.getSalary() > salaryAvr).toList();
 
         return salaryHigherAverage;
     }

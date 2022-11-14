@@ -8,7 +8,7 @@ Content-Type: application/json
   "firstName": "Test",
   "lastName": "Test",
   "department": 1,
-  "salary": 1000
+  "salary": 2000
 }
 
 ### Создать сотрудника 2
@@ -19,7 +19,7 @@ Content-Type: application/json
   "firstName": "Test2",
   "lastName": "Test2",
   "department": 2,
-  "salary": 8200
+  "salary": 8500
 }
 ### Создать сотрудника 3
 POST http://localhost:8080/employees
@@ -29,7 +29,7 @@ Content-Type: application/json
   "firstName": "Test3",
   "lastName": "Test3",
   "department": 3,
-  "salary": 4500
+  "salary": 1000
 }
 ### Получение суммы зарплат сотрудников
 GET http://localhost:8080/employees/salary/sum
