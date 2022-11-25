@@ -4,6 +4,7 @@ import com.nomad.employee.model.Employee;
 import com.nomad.employee.record.EmployeeRequest;
 import org.springframework.stereotype.Service;
 
+import javax.management.BadAttributeValueExpException;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -16,7 +17,7 @@ public class EmployeeService {
         return this.employees.values();
     }
 
-    public Employee addEmployee(EmployeeRequest employeeRequest) {
+    public Employee addEmployee(EmployeeRequest employeeRequest) throws BadAttributeValueExpException {
 
         if (employeeRequest.getFirstName() == null || employeeRequest.getLastName() == null) {
             throw new IllegalArgumentException("Employee name should be set");
