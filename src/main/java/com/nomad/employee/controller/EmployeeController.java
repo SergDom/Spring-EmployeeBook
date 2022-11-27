@@ -23,7 +23,7 @@ public class EmployeeController {
     }
 
     @PostMapping("/employees")
-    public Employee createEmployee(@RequestBody EmployeeRequest employeeRequest) throws BadAttributeValueExpException {
+    public Employee createEmployee(@RequestBody EmployeeRequest employeeRequest) {
         return this.employeeService.addEmployee(employeeRequest);
     }
 

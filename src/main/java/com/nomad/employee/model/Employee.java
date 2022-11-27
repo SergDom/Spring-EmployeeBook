@@ -2,8 +2,6 @@ package com.nomad.employee.model;
 
 import org.apache.commons.lang3.StringUtils;
 
-import javax.management.BadAttributeValueExpException;
-
 public class Employee {
 
     private  static  int counter;
@@ -19,7 +17,7 @@ public class Employee {
 
 
 
-    public Employee(String firstname, String lastname, int department, int salary) throws BadAttributeValueExpException {
+    public Employee(String firstname, String lastname, int department, int salary) {
         setFirstname(firstname);
         setLastname(lastname);
         this.department = department;
@@ -28,17 +26,17 @@ public class Employee {
         this.id=counter++;
     }
 
-    public void setFirstname(String firstname) throws BadAttributeValueExpException {
+    public void setFirstname(String firstname) {
         if (!StringUtils.isAlpha(firstname)) {
-            throw new BadAttributeValueExpException("400 Bad Request");
+            System.out.println("400 Bad Request");
         } else {
             this.firstname = StringUtils.capitalize(firstname);
         }
     }
 
-    public void setLastname(String lastname) throws BadAttributeValueExpException {
+    public void setLastname(String lastname) {
         if (!StringUtils.isAlpha(lastname)) {
-            throw new BadAttributeValueExpException("400 Bad Request");
+            System.out.println("400 Bad Request");
         } else {
             this.lastname = StringUtils.capitalize(lastname);
         }
