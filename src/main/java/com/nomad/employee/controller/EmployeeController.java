@@ -6,6 +6,7 @@ import com.nomad.employee.record.EmployeeRequest;
 import com.nomad.employee.service.EmployeeService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.management.BadAttributeValueExpException;
 import java.util.Collection;
 import java.util.List;
 
@@ -22,7 +23,7 @@ public class EmployeeController {
     }
 
     @PostMapping("/employees")
-    public Employee createEmployee(@RequestBody EmployeeRequest employeeRequest){
+    public Employee createEmployee(@RequestBody EmployeeRequest employeeRequest) {
         return this.employeeService.addEmployee(employeeRequest);
     }
 

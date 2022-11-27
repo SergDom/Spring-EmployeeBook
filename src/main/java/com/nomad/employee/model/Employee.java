@@ -1,25 +1,45 @@
 package com.nomad.employee.model;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class Employee {
 
     private  static  int counter;
     private final  int id;
-    private final String firstname;
+    private  String firstname;
 
-    private final String lastname;
+    private String lastname;
 
     private final int department;
 
     private final  int salary;
 
 
+
+
     public Employee(String firstname, String lastname, int department, int salary) {
-        this.firstname = firstname;
-        this.lastname = lastname;
+        setFirstname(firstname);
+        setLastname(lastname);
         this.department = department;
         this.salary = salary;
 
         this.id=counter++;
+    }
+
+    public void setFirstname(String firstname) {
+        if (!StringUtils.isAlpha(firstname)) {
+            System.out.println("400 Bad Request");
+        } else {
+            this.firstname = StringUtils.capitalize(firstname);
+        }
+    }
+
+    public void setLastname(String lastname) {
+        if (!StringUtils.isAlpha(lastname)) {
+            System.out.println("400 Bad Request");
+        } else {
+            this.lastname = StringUtils.capitalize(lastname);
+        }
     }
 
     public int getId() {
